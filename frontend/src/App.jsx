@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
 import LoadingScreen from "./components/LoadingScreen";
 import About from "./components/about";
+import Domains from "./components/Domains.jsx";
+import GeneralGuidelines from "./components/GeneralGuildelines.jsx";
+import PrizeSection from "./components/PrizeSection.jsx";
 import ShortlistedTeams from "./pages/ShortlistedTeams";
 
 // Landing page — home + about sections
@@ -18,6 +21,9 @@ const LandingPage = () => {
       />
       <Home />
       <About />
+      <Domains />
+      <GeneralGuidelines />
+      <PrizeSection />
     </>
   );
 };
