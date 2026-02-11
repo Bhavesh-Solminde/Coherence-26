@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
 import LoadingScreen from "./components/LoadingScreen";
 import About from "./components/about";
+import Contact from "./components/contact";
+import FAQs from "./components/faqs";
 import ShortlistedTeams from "./pages/ShortlistedTeams";
 
 // Landing page — home + about sections
@@ -18,6 +20,8 @@ const LandingPage = () => {
       />
       <Home />
       <About />
+      <FAQs />
+      <Contact />
     </>
   );
 };
