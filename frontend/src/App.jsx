@@ -1,22 +1,36 @@
-import React, { useState, useEffect } from 'react'
-import Home from './components/home'
-import LoadingScreen from './components/LoadingScreen'
-import About from './components/about'
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/home";
+import LoadingScreen from "./components/LoadingScreen";
+import About from "./components/about";
+import ShortlistedTeams from "./pages/ShortlistedTeams";
 
-const App = () => {
+// Landing page — home + about sections
+const LandingPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
     <>
-      <LoadingScreen 
-        isLoading={isLoading} 
+      <LoadingScreen
+        isLoading={isLoading}
         onLoadingComplete={() => setIsLoading(false)}
         minDuration={3000}
       />
       <Home />
       <About />
     </>
-  )
-}
+  );
+};
 
-export default App
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/shortlisted-teams" element={<ShortlistedTeams />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
